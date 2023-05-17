@@ -44,7 +44,7 @@ subprocess.Popen(command, shell=True)
 
 time.sleep(5)
 print('============================================================')
-print('Scan the IPS you got')
+print('Scan all the IP you got')
 
 def nmserver():
     klm = input('Sever AD Recon - AD ip: ')
