@@ -31,11 +31,11 @@ print('============================================================')
 
 # crackmapexec
 print('''
-    ======================================================================================
-    Because crackmapexe is giving an error in the code, let's open it in another terminal
-    But once you discover all the hosts you can close the new terminal and continue
-    ======================================================================================
-    ''')
+======================================================================================
+Because crackmapexe is giving an error in the code, let's open it in another terminal
+But once you discover all the hosts you can close the new terminal and continue
+======================================================================================
+''')
 
 command = 'gnome-terminal -- bash -c "crackmapexec smb targets; exec bash"'
 
@@ -50,7 +50,7 @@ def nmserver():
     klm = input('Sever AD Recon - AD ip: ')
     os.system(f'nmap -v --open -Pn {klm}')
 nmserver()
-
+print('============================================================')
 continuar1 = input('Have More AD Hosts to scan[yes/no] ')
 if continuar1.lower == "yes":
         nmserver()
@@ -63,10 +63,12 @@ port53 = input('Any 53 port in Ad host? [yes/no] ')
 if port53 == "yes":    
     # Resolucao de DNS
     def dnsresol():
+        print('============================================================')
         print('DNS Resolution')
         first_host = input('Server AD Host: ')
         second_host = input('Second Host: ')
         os.system(f'host {first_host} {second_host}')
+        print('============================================================')
     dnsresol()
 
     # host
