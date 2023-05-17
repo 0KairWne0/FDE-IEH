@@ -45,6 +45,7 @@ print('Scan the IPS you got')
 def nmserver():
     klm = input('Sever AD Recon - AD ip: ')
     os.system(f'nmap -v --open -Pn {klm}')
+nmserver()
 
 continuar1 = input('Have More AD Hosts to scan[yes/no] ')
 
