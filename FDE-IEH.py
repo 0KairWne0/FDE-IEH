@@ -26,6 +26,7 @@ print('============================================================')
 host = input('Internal HOST: ')
 os.system(f'nmap --open -v -sS -p 445 -Pn {host}/24 -oG smb.txt')
 os.system('cat smb.txt | grep "Up" | cut -d " " -f 2 > targets')
+os.system('clear')
 print('============================================================')
 
 # crackmapexec
@@ -34,7 +35,7 @@ print('''
     Because crackmapexe is giving an error in the code, let's open it in another terminal
     But once you discover all the hosts you can close the new terminal and continue
     ======================================================================================
-      ''')
+    ''')
 
 command = 'gnome-terminal -- bash -c "crackmapexec smb targets; exec bash"'
 
@@ -89,7 +90,10 @@ print('''
       I will open a new terminal so you can configure it. After that, you can
       come back here and type "yes"
 ''')
-os.system('gnome-terminal')
+command = 'gnome-terminal -- bash -c "nano /etc/responder/responder.conf; exec bash"'
+
+# Executa o comando no novo terminal
+subprocess.Popen(command, shell=True)
 
 respo = input('Continue [yes] ')
 
