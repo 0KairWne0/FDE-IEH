@@ -90,6 +90,9 @@ print('''
       I will open a new terminal so you can configure it. After that, you can
       come back here and type "yes"
 ''')
+
+os.system('rm -rf smb.txt')
+os.system('rm -rf targets')
 command = 'gnome-terminal -- bash -c "nano /etc/responder/responder.conf; exec bash"'
 
 # Executa o comando no novo terminal
