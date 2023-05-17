@@ -22,9 +22,11 @@ else:
     print('Ok..')
 
 # Scanner
+print('============================================================')
 host = input('Internal HOST: ')
 os.system(f'nmap --open -v -sS -p 445 -Pn {host}/24 -oG smb.txt')
 os.system('cat smb.txt | grep "Up" | cut -d " " -f 2 > targets')
+print('============================================================')
 
 # crackmapexec
 print('''
@@ -40,7 +42,7 @@ command = 'gnome-terminal -- bash -c "crackmapexec smb targets; exec bash"'
 subprocess.Popen(command, shell=True)
 
 time.sleep(5)
-
+print('============================================================')
 print('Scan the IPS you got')
 def nmserver():
     klm = input('Sever AD Recon - AD ip: ')
@@ -51,8 +53,10 @@ continuar1 = input('Have More AD Hosts to scan[yes/no] ')
 
 while continuar1.lower() == "yes":
     nmserver()
+    
     continuar = input('Have More AD Hosts [yes/no] ')
 
+print('============================================================')
 port53 = input('Any 53 port in Ad host? [yes/no] ')
 if port53 == "yes":    
     # Resolucao de DNS
