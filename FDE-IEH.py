@@ -26,15 +26,14 @@ print('============================================================')
 host = input('Internal HOST: ')
 os.system(f'nmap --open -v -sS -p 445 -Pn {host}/24 -oG smb.txt')
 os.system('cat smb.txt | grep "Up" | cut -d " " -f 2 > targets')
-os.system('clear')
 print('============================================================')
 
 # crackmapexec
 print('''
-        ======================================================================================
-        Because crackmapexe is giving an error in the code, let's open it in another terminal
-        But once you discover all the hosts you can close the new terminal and continue
-        ======================================================================================
+    ======================================================================================
+    Because crackmapexe is giving an error in the code, let's open it in another terminal
+    But once you discover all the hosts you can close the new terminal and continue
+    ======================================================================================
       ''')
 
 command = 'gnome-terminal -- bash -c "crackmapexec smb targets; exec bash"'
@@ -45,17 +44,18 @@ subprocess.Popen(command, shell=True)
 time.sleep(5)
 print('============================================================')
 print('Scan the IPS you got')
+
 def nmserver():
     klm = input('Sever AD Recon - AD ip: ')
     os.system(f'nmap -v --open -Pn {klm}')
 nmserver()
 
 continuar1 = input('Have More AD Hosts to scan[yes/no] ')
+if continuar1.lower == "yes":
+        nmserver()
+else:
+    print('OK..')
 
-while continuar1.lower() == "yes":
-    nmserver()
-    
-    continuar = input('Have More AD Hosts [yes/no] ')
 
 print('============================================================')
 port53 = input('Any 53 port in Ad host? [yes/no] ')
@@ -73,7 +73,7 @@ if port53 == "yes":
 
     while continuar2.lower() == "yes":
         dnsresol()
-        continuar2 = input('Have More Hosts [yes/no] ')
+        
 else:
     print("ok....")        
 
