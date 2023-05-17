@@ -26,6 +26,7 @@ print('============================================================')
 host = input('Internal HOST: ')
 os.system(f'nmap --open -v -sS -p 445 -Pn {host}/24 -oG smb.txt')
 os.system('cat smb.txt | grep "Up" | cut -d " " -f 2 > targets')
+os.system('clear')
 print('============================================================')
 
 # crackmapexec
