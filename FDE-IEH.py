@@ -105,6 +105,6 @@ respo = input('Continue [yes] ')
 if respo.lower() == "yes":
     inter = input('Which network interface? [eth0/wlan0] ')
     os.chdir('/etc/responder')
-    os.system(f'responder -I {inter} -Prv')
+    os.system(f'responder -I {inter} -wd')
 else:
     exit()
