@@ -85,7 +85,7 @@ print('''
       Now we need to manually configure responder with the scope IPs you found.
       
       cd /etc/responder
-      nano responder.conf
+      nano Responder.conf
       
       Go to the line that has "RespondTo = " and add the IPs of the scope you have
       
@@ -95,7 +95,7 @@ print('''
 
 os.system('rm -rf smb.txt')
 os.system('rm -rf targets')
-command = 'gnome-terminal -- bash -c "nano /etc/responder/responder.conf; exec bash"'
+command = 'gnome-terminal -- bash -c "nano /etc/responder/Responder.conf; exec bash"'
 
 # Executa o comando no novo terminal
 subprocess.Popen(command, shell=True)
