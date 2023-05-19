@@ -74,7 +74,7 @@ if port53 == "yes":
     # host
     continuar2 = input('Have More Hosts [yes/no] ')
 
-    while continuar2.lower() == "yes":
+    if continuar2 == "yes":
         dnsresol()
         
 else:
