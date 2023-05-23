@@ -76,8 +76,8 @@ if port53 == "yes":
 
     if continuar2.lower == "yes":
         dnsresol()
-else:
-    print('OK..')
+    else:
+        print('OK..')
         
 else:
     print("ok....")        
