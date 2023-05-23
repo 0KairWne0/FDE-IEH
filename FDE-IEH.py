@@ -33,7 +33,7 @@ print('============================================================')
 print('''
 ======================================================================================
 Because crackmapexe is giving an error in the code, let's open it in another terminal
-But once you discover all the hosts you can close the new terminal and continue
+But once you discover all the hosts you can continue
 ======================================================================================
 ''')
 
